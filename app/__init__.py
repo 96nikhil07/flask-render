@@ -1,11 +1,9 @@
-# This file makes the app directory a package.
 from flask import Flask
 
 def create_app():
     app = Flask(__name__)
 
-    # Import and register blueprints
-    from .routes import main as main_blueprint
-    app.register_blueprint(main_blueprint)
+    from .routes import main
+    app.register_blueprint(main)
 
     return app
